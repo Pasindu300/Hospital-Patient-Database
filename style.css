@@ -1,0 +1,127 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("Hospital.jpg");
+				  
+				  
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #6e2c00;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #6e2c00;
+    margin-bottom: 10px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    color: #6e2c00;
+    margin-bottom: 5px;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    background-color: #f2f2f2;
+    color: #333333;
+}
+
+form input[type="submit"] {
+    background: #6e2c00;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background: #8f3e00;
+}
+
+a {
+    color: #6e2c00;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.record-viewing-panel {
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.record-viewing-panel h2 {
+    color: #6e2c00;
+    margin-bottom: 15px;
+}
+
+.record-viewing-panel form {
+    margin-bottom: 15px;
+}
+
+.record-viewing-panel form label {
+    color: #6e2c00;
+}
+
+.record-viewing-panel form input[type="text"] {
+    width: 70%;
+    padding: 10px;
+}
+
+.record-viewing-panel form input[type="submit"] {
+    width: 25%;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.record-viewer {
+    background: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.record-viewer p {
+    margin-bottom: 5px;
+}
+
+.record-viewer .record {
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.record-viewer .record:last-child {
+    margin-bottom: 0;
+}
+
+.record-viewer .record:nth-child(odd) {
+    background: #f2f2f2;
+}

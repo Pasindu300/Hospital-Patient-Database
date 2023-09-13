@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page - Hospital System</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	   <style>
+        /* CSS for the popup */
+        .popup {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #f44336;
+            color: white;
+            padding: 10px;
+            display: none;
+        }
+    </style>
+    <script>
+	
+	
+        window.addEventListener('DOMContentLoaded', function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var alertParam = urlParams.get('alert');
+
+            if (alertParam === 'true') {
+                var popup = document.createElement('div');
+                popup.className = 'popup';
+                popup.textContent = 'Patient Added Successfully!';
+
+                document.body.appendChild(popup);
+
+                popup.style.display = 'block';
+
+                setTimeout(function() {
+                    popup.style.display = 'none';
+                }, 5000); // Display for 5 seconds
+            }else if (alertParam === 'success') {
+                var popup = document.createElement('div');
+                popup.className = 'popup';
+                popup.textContent = 'Record Updated';
+
+                document.body.appendChild(popup);
+
+                popup.style.display = 'block';
+
+                setTimeout(function() {
+                    popup.style.display = 'none';
+                }, 5000);
+            }else if (alertParam === 'error'){
+                var popup = document.createElement('div');
+                popup.className = 'popup';
+                popup.textContent = 'Record deleted successfully.';
+
+                document.body.appendChild(popup);
+
+                popup.style.display = 'block';
+
+                setTimeout(function() {
+                    popup.style.display = 'none';
+                }, 5000);
+            }
+           
+        });
+    </script>
+	<script>
+// Fetch the next patient ID from the PHP file
+fetch('get_patient_id.php')
+  .then(response => response.json())
+  .then(data => {
+    // Extract the next patient ID value from the JSON response
+    const nextPatientId = data.next_patient_id;
+    // Populate the patient ID input field with the retrieved value
+    document.getElementById('patient_id_input').value = nextPatientId;
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+</script>
+
+</head>
+<body>
+       				   
+    <div class="container">
+        <h1>Welcome to the Hospital System</h1>
+        <h2>Add Patient Details</h2>
+
+        <form method="post" action="add_patient.php">
+            <label>Patient ID:</label>
+            <input type="text" name="patient_id" id="patient_id_input" readonly><br>
+            <label>NIC:</label>
+            <input type="text" name="nic" required><br>
+            <label>Full Name:</label>
+            <input type="text" name="full_name" required><br>
+            <label>Date of Birth:</label>
+            <input type="date" name="dob" required><br>
+            <label>Gender:</label>
+            <select name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select><br>
+            <label>Blood Group:</label>
+            <input type="text" name="blood_group" required><br>
+            <label>Address:</label>
+            <input type="text" name="address" required><br>
+            <label>Phone Number:</label>
+            <input type="text" name="phone_number" required><br>
+            <label>Nationality:</label>
+            <input type="text" name="nationality" required><br>
+            <label>Marital Status:</label>
+            <input type="text" name="marital_status" required><br>
+            <label>Occupation:</label>
+            <input type="text" name="occupation" required><br>
+            <label>Date Admitted:</label>
+            <input type="date" name="date_admitted" required><br>
+            <label>Email:</label>
+            <input type="email" name="email" required><br>
+            <input type="submit" value="Add Patient">
+        </form>
+    </div>
+
+    <div class="record-viewing-panel">
+        <h2>Search and Record Viewing Panel</h2>
+
+        <form method="get" action="search_patient">
+            <label>Search Patient:</label>
+            <input type="text" name="search_query" required>
+            <input type="submit" value="Search">
+        </form>
+
+       <a href="about_us.html">About Us</a> |
+    <a href="contact_us.html">Contact Us</a>
+    </div>
+
+    <br>
+    
+</body>
+</html>

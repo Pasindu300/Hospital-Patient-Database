@@ -1,0 +1,33 @@
+/* style1.css */
+
+/* Add CSS styles for the <body> element */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Add CSS styles for the <h1> element */
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* Add CSS styles for the <p> element */
+p {
+    color: #666;
+    font-size: 16px;
+    text-align: justify;
+    padding: 0 20px;
+}
+
+/* Add CSS styles for the <a> elements */
+a {
+    color: #069;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}

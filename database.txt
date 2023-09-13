@@ -1,0 +1,22 @@
+-- Create the database
+CREATE DATABASE hospital_system;
+
+-- Use the database
+USE hospital_system;
+
+-- Create the patients table
+CREATE TABLE patients (
+    patient_id INT PRIMARY KEY AUTO_INCREMENT,
+    nic VARCHAR(20) NOT NULL,
+    full_name VARCHAR(100) NOT NULL,
+    dob DATE NOT NULL,
+    gender ENUM('male', 'female', 'other') NOT NULL,
+    blood_group VARCHAR(10) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(20) NOT NULL,
+    nationality VARCHAR(50) NOT NULL,
+    marital_status VARCHAR(20) NOT NULL,
+    occupation VARCHAR(50) NOT NULL,
+    date_admitted DATE NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
